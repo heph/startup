@@ -1,0 +1,56 @@
+##
+# Documentation
+<%= format_upstart(:author) -%>
+<%= format_upstart(:description) -%>
+<%= format_upstart(:emits) -%>
+<%= format_upstart(:version) -%>
+<%= format_upstart(:usage) -%>
+
+##
+# Event Definition
+<%= format_upstart(:manual) -%>
+<%= format_upstart(:start_on) -%>
+<%= format_upstart(:stop_on) -%>
+
+##
+# Services, Tasks, and Respawning
+<%= format_upstart(:normal_exit) -%>
+<%= format_upstart(:respawn) -%>
+<%= format_upstart(:respawn_limit) -%>
+<%= format_upstart(:task) -%>
+<%= format_upstart(:instance) -%>
+
+##
+# Process Environment
+<%= format_upstart(:apparmor_load) -%>
+<%= format_upstart(:apparmor_switch) -%>
+<%= format_upstart(:console) -%>
+<%= format_upstart(:chdir) -%>
+<%= format_upstart(:chroot) -%>
+<%= format_upstart(:limit) -%>
+<%= format_upstart(:nice) -%>
+<%= format_upstart(:oom_score) -%>
+<%= format_upstart(:setgid) -%>
+<%= format_upstart(:setuid) -%>
+<%= format_upstart(:umask) -%>
+
+##
+# Job Environment
+<%= format_upstart(:env) -%>
+<%= format_upstart(:export) -%>
+
+##
+# Process Control
+<%= format_upstart(:expect) -%>
+<%= format_upstart(:kill_signal) -%>
+<%= format_upstart(:kill_timeout) -%>
+<%= format_upstart(:reload_signal) -%>
+
+##
+# Process Definition
+<%= format_upstart(:exec) -%>
+<% if @script -%>
+script
+<%= @script.join("\n") %>
+end script
+<% end -%>

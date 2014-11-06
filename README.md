@@ -1,4 +1,4 @@
-startup
-=======
+# startup
 
-Chef Cookbook extending the 'service' resource.
+TODO: Enter the cookbook description here.
+
