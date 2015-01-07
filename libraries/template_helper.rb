@@ -7,20 +7,16 @@ module Extensions
       case value
       when TrueClass # print only 'key'
         key
-      when Array # prefix multiple lines with 'key'
+      when Array # multiple values with the same 'key' e.g. 'export var1', 'export var2'
         value.map{ |v| "#{key} #{v}" }.join("\n")
-      when String, Fixnum, Integer
+      when String, Fixnum, Integer # print key followed by value
         "#{key} #{value}\n"
-      when Hash # prefix multiple lines with 'key', format 'value' as k=v (quote strings)
+      when Hash # multiple values with the same 'key', format 'value' as k=v (quote strings) e.g. 'env FOO="BAR"', 'env BAR=42'
         value.map do |k,v|
           v = "\"#{v}\"" if v.is_a?(String)
-          "#{key} #{k}=#{v}\n"
-        end
+          "#{key} #{k}=#{v}"
+        end.join("\n")
       end
     end
   end
 end
-
-
-
-
