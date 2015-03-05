@@ -163,7 +163,7 @@ Invoking this provider with `:create` builds an init script named
  `/etc/init/#{new_resource.name}.conf`. All supported upstart parameters are
 copied into that init script verbatim.
 
-The Chef config of:
+The Chef config:
 ```ruby
 # Create the service
 service 'nodeapp' do
