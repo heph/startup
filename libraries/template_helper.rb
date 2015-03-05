@@ -6,7 +6,7 @@ module Extensions
 
       case value
       when TrueClass # print only 'key'
-        key
+        "#{key}\n"
       when Array # multiple values with the same 'key' e.g. 'export var1', 'export var2'
         value.map{ |v| "#{key} #{v}" }.join("\n")
       when String, Fixnum, Integer # print key followed by value

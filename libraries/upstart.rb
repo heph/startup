@@ -17,11 +17,11 @@ class Chef
         @init_command = nil
         @priority = nil
         @timeout = nil
-        @action = 'nothing'
+        @action = "nothing"
 
-        @author = 'Managed by Chef'
-        @start_on = 'runlevel [2345]'
-        @stop_on = 'runlevel [06]'
+        @author = "Managed by Chef"
+        @start_on = "runlevel [2345]"
+        @stop_on = "runlevel [06]"
         @task = false
         @respawn = false
         @manual = false
@@ -111,6 +111,10 @@ class Chef
             t.cookbook('startup')
             t.variables(upstart_spec)
             t.run_action(:create)
+
+            if t.updated_by_last_action?
+              action_restart
+            end
           end
         end
 
